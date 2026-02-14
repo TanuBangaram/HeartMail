@@ -1124,32 +1124,83 @@ class AppManager {
       });
     });
   }
-
-  // ================= SHOP =================
+   // ================= SHOP =================
   renderShop() {
     const box = document.getElementById("shopList");
     if (!box) return;
 
-    box.innerHTML = `<div class="row-shell">${mockData.shop
-      .map(
-        (i) => `
-      <div class="row-item">
-        <div class="row-left">
-          <div class="row-title">${i.symbol} ${i.name}</div>
-          <div class="row-sub">${i.category}</div>
-        </div>
-        <div class="row-right">${i.price} pts</div>
+    box.innerHTML = `
+      <div class="row-shell">
+        ${mockData.shop
+          .map((i) => {
+            const disabled = (this.user?.points || 0) < i.price;
+
+            return `
+              <div class="row-item">
+                <div class="row-left">
+                  <div class="row-title">${i.symbol} ${i.name}</div>
+                  <div class="row-sub">${i.category}</div>
+                </div>
+
+                <div class="row-right">
+                  <span>${i.price} pts</span>
+                  <button class="pet-pill shop-buy ${disabled ? "disabled" : ""}" data-id="${i.id}">
+                    Buy
+                  </button>
+                </div>
+              </div>
+            `;
+          })
+          .join("")}
       </div>
-    `
-      )
-      .join("")}</div>`;
+    `;
+
+    // ⭐ PURCHASE LOGIC (attach listeners AFTER render)
+    box.querySelectorAll(".shop-buy").forEach((btn) => {
+      if (btn.classList.contains("disabled")) return;
+
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        const itemId = Number(btn.dataset.id);
+        const item = mockData.shop.find((x) => x.id === itemId);
+        if (!item) return;
+
+        if (!this.user) return alert("Log in first 💌");
+        if ((this.user.points || 0) < item.price) return alert("Not enough points ✨");
+
+        // Deduct points
+        this.user.points -= item.price;
+
+        // Feedback
+        this.sound.playClick();
+        btn.textContent = "✓";
+        btn.classList.add("shop-success");
+        btn.style.pointerEvents = "none";
+
+        // Add sticker if sticker item
+        if (item.category === "stickers") {
+          mockData.stickersOwned.push({
+            id: Date.now(),
+            symbol: item.symbol,
+            name: item.name,
+          });
+        }
+
+        // Re-render UI
+        this.renderDashboard();
+        this.renderStickers();
+        this.renderShop();
+      });
+    });
   }
-}
+} // ✅ IMPORTANT: this closes the AppManager class
 
 // ==================== INITIALIZE APP ====================
 document.addEventListener("DOMContentLoaded", () => {
   window.app = new AppManager();
 });
+
 
 
 
