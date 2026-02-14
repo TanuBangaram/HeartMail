@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HeartMail — write slowly, connect deeply</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital@0;1&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">HeartMail</a>
+
+      <div class="nav-links">
+        <!-- LANDING LINKS (hide after login) -->
+        <div id="landingLinks">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#how" class="nav-link">How it works</a>
+          <a href="#why" class="nav-link">Why letters</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <!-- LANDING AUTH (shown before login) -->
+        <div class="nav-auth" id="landingNav">
+          <button class="btn-text" id="loginBtn">Log in</button>
+          <button class="btn-outline" id="signupBtn">Sign up</button>
+        </div>
+
+        <!-- APP NAV (shown after login) -->
+        <div class="nav-auth hidden" id="appNav">
+          <button class="btn-text navAppBtn" data-page="dashboard">Home</button>
+          <button class="btn-text navAppBtn" data-page="mailbox">Mailbox</button>
+          <button class="btn-text navAppBtn" data-page="desk">Write</button>
+          <button class="btn-text navAppBtn" data-page="pets">Pets</button>
+          <button class="btn-text navAppBtn" data-page="shop">Shop</button>
+          <button class="btn-text navAppBtn" data-page="connections">Connections</button>
+          <button class="btn-text" id="logoutBtn">Log out</button>
+        </div>
+      </div>
+
+      <button class="mobile-menu" id="mobileMenu">☰</button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">HeartMail</h1>
+        <p class="hero-subtitle">write slowly · connect deeply</p>
+        <div class="hero-cta">
+          <button class="btn-primary" id="getStartedBtn">Begin your journey</button>
+          <button class="btn-secondary" id="learnMoreBtn" onclick="location.href='#about'">Learn more</button>
+        </div>
+        <div class="scroll-indicator">
+          <span>Scroll to discover</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section">
+      <div class="section-container">
+        <span class="section-label">About</span>
+        <h2 class="section-title">A slower way to connect</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p class="lead">In a world of instant messages, we forget the beauty of waiting.</p>
+            <p>HeartMail brings back the ritual of letter writing. One letter per week. Time to think, to feel, to express. No notifications, no pressure, no endless scrolling.</p>
+            <p>Just words on paper (digital paper, but still). And a little friend who grows with every letter you exchange.</p>
+          </div>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number">10k+</span>
+              <span class="stat-label">letters sent</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">5k+</span>
+              <span class="stat-label">active writers</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">98%</span>
+              <span class="stat-label">feel more connected</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section id="how" class="how-section">
+      <div class="section-container">
+        <span class="section-label">How it works</span>
+        <h2 class="section-title">Write, send, grow</h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3>Write your letter</h3>
+            <p>Take your time. Choose your words. Add a drawing, a sticker, a personal touch. No rush.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3>Send it off</h3>
+            <p>One letter per week. Address it to a friend, seal it with intention, and wait.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3>Watch it grow</h3>
+            <p>Your shared friend grows with every letter. A little reminder of your connection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section id="why" class="why-section">
+      <div class="section-container">
+        <span class="section-label">Why letters</span>
+        <h2 class="section-title">The art of slow communication</h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon">✧</div>
+            <h3>Thoughtful</h3>
+            <p>Letters give you time to reflect, to choose your words carefully, to say what you really mean.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">◈</div>
+            <h3>Anticipated</h3>
+            <p>The wait makes it meaningful. A letter arriving feels like a small gift.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">◉</div>
+            <h3>Personal</h3>
+            <p>Your handwriting, your stickers, your way of expressing. It's unmistakably you.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">◇</div>
+            <h3>Lasting</h3>
+            <p>Letters can be kept, re-read, cherished. They become small treasures.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <div class="section-container">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Get in touch</h2>
+        <div class="contact-content">
+          <p>Questions? Thoughts? Just want to say hello?</p>
+          <div class="contact-links">
+            <a href="mailto:hello@heartmail.com" class="contact-link">hello@heartmail.com</a>
+            <a href="#" class="contact-link">@heartmail</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= APP PAGES ================= -->
+
+    <!-- DASHBOARD -->
+    <div id="dashboardPage" class="app-page hidden">
+      <div class="dashboard-header">
+        <h2 id="dashGreeting">Welcome</h2>
+        <div class="dashboard-stats">
+          <div class="dashboard-stat">
+            <span class="value" id="dashPoints">0</span>
+            <span class="label">Points</span>
+          </div>
+          <div class="dashboard-stat">
+            <span class="value" id="dashConnections">0</span>
+            <span class="label">Connections</span>
+          </div>
+          <div class="dashboard-stat">
+            <span class="value" id="dashLetters">0</span>
+            <span class="label">Letters</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="dashboard-card nav-card" data-page="desk">
+          <h3>Writing Desk</h3>
+          <p>Write your weekly letter</p>
+        </div>
+
+        <div class="dashboard-card nav-card" data-page="mailbox">
+          <h3>Mailbox</h3>
+          <p>Your received letters</p>
+        </div>
+
+        <div class="dashboard-card nav-card" data-page="connections">
+          <h3>Connections</h3>
+          <p>Your people</p>
+        </div>
+
+        <div class="dashboard-card nav-card" data-page="pets">
+          <h3>Pets</h3>
+          <p>Your shared companions</p>
+        </div>
+
+        <div class="dashboard-card nav-card" data-page="shop">
+          <h3>Shop</h3>
+          <p>Stickers & add-ons</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESK -->
+    <div id="deskPage" class="app-page hidden">
+      <div class="desk-container">
+        <button class="btn-text backBtn">← Back</button>
+
+        <div class="desk-tools">
+          <select id="fontSelect" class="tool-select">
+            <option value="Playfair Display">Playfair</option>
+            <option value="Caveat">Handwritten</option>
+            <option value="Inter">Inter</option>
+            <option value="Georgia">Georgia</option>
+          </select>
+
+          <select id="themeSelect" class="tool-select">
+            <option value="cozy">Cozy</option>
+            <option value="dreamy">Dreamy</option>
+            <option value="midnight">Midnight</option>
+          </select>
+
+          <button class="pet-pill hidden" id="uploadStickerBtn">Upload Sticker</button>
+        </div>
+
+        <input type="email" id="recipientInput" class="recipient-input" placeholder="friend@email.com">
+
+        <!-- UPDATED PAPER: rails + stamps + editor -->
+        <div class="letter-paper" id="letterPaper">
+          <div class="paper-rail left" id="stickerRail" aria-label="Sticker rail"></div>
+          <div class="paper-rail right" id="highlightRail" aria-label="Highlighter rail"></div>
+          <div class="paper-stamps" id="paperStamps"></div>
+
+          <div id="letterInput" class="letter-editor" contenteditable="true" data-placeholder="Dear you..."></div>
+        </div>
+
+        <!-- kept original tray for compatibility -->
+        <div class="sticker-header">
+          <div class="sticker-title">Stickers</div>
+          <div class="sticker-hint">tap to add ✧</div>
+        </div>
+        <div id="stickerTray" class="sticker-tray"></div>
+
+        <div class="desk-actions">
+          <button class="btn-send" id="sendLetterBtn">Send letter</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAILBOX -->
+    <div id="mailboxPage" class="app-page hidden">
+      <div class="desk-container">
+        <button class="btn-text backBtn">← Back</button>
+        <h2>Mailbox</h2>
+        <div id="mailboxList"></div>
+      </div>
+    </div>
+
+    <!-- CONNECTIONS -->
+    <div id="connectionsPage" class="app-page hidden">
+      <div class="desk-container">
+        <button class="btn-text backBtn">← Back</button>
+        <h2>Connections</h2>
+        <p class="page-subtext">
+          Each connection has a shared pet. Pick a moth or paper crane ✨
+        </p>
+        <div id="connectionsList"></div>
+      </div>
+    </div>
+
+    <!-- PETS -->
+    <div id="petsPage" class="app-page hidden">
+      <div class="desk-container">
+        <button class="btn-text backBtn">← Back</button>
+        <h2>Pets</h2>
+        <p class="page-subtext">
+          Your shared companions grow as you write letters together.
+        </p>
+        <div id="petsGrid"></div>
+      </div>
+    </div>
+
+    <!-- SHOP -->
+    <div id="shopPage" class="app-page hidden">
+      <div class="desk-container">
+        <button class="btn-text backBtn">← Back</button>
+        <h2>Shop</h2>
+        <div class="list-shell" id="shopList"></div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">HeartMail</div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#how">How it works</a>
+          <a href="#why">Why letters</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-copyright">© 2025 HeartMail — write slowly, connect deeply</div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
