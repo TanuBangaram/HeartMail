@@ -19,4 +19,3 @@ HeartMail is a slow letter-writing web app designed to encourage meaningful, int
 - Delayed delivery system
 - Enhanced personalization
 
-Built during a hackathon
